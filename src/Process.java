@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Process {
 
-	public int pid; // ID do processo
+	public int pid; // Identificador do processo
 	
 	public double sizeRequired; // tamanho de alocação requerido pelo processo
 	
