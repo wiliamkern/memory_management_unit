@@ -45,12 +45,11 @@ public class Unit {
 				}
 
 			} else {
-				// caso for um valor fora do intervalo executa a main novamente
-				//main(args);
+				// caso for um valor fora do intervalo dispara uma exception
 				throw new Exception();
 			}
 
-		} catch (Exception ex) {
+		} catch (Exception ex) { // exception que executa inicia a main novamente informando que o valor inserido era inválido
 			System.out.println("Comando inválido, insira um comando válido!"); 
 			main(args);
 		}
