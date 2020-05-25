@@ -23,4 +23,6 @@ public class Instruction { // instrução a ser executada pelo sistema
 		public void setStoragePosition(int storagePosition) {
 			this.storagePosition = storagePosition;
 		}
+		
 }
+
