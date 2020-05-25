@@ -13,7 +13,7 @@ public class Unit {
 		System.out.println("|     4. Circular-fit                                                      |");
 		System.out.println("|                                                                          |");
 		System.out.println("----------------------------------------------------------------------------");
-		System.out.println("TESTE aaaa");
+		System.out.println("TESTE final do teste (agora vai)");
 
 		Scanner scan = new Scanner(System.in);
 		String valueCommand = scan.nextLine();
