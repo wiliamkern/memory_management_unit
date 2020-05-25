@@ -31,4 +31,5 @@ public class Process {
 	public void setProcessTasks(ArrayList<Instruction> processTasks) {
 		this.processTasks = processTasks;
 	}
+	
 }
