@@ -4,20 +4,23 @@ public class Unit {
 
 	public static void main(String[] args) {
 
-		System.out.println("--------------------- Memory Management Unit Control -----------------------");
-		System.out.println("|                                                                          |");
-		System.out.println("| * Escolha o algoritmo algoritmos de gerenciamento de partições variáveis!|");
-		System.out.println("|     1. First-Fit                                                         |");
-		System.out.println("|     2. Best-Fit                                                          |");
-		System.out.println("|     3. Worst-Fit                                                         |");
-		System.out.println("|     4. Circular-fit                                                      |");
-		System.out.println("|                                                                          |");
-		System.out.println("----------------------------------------------------------------------------");
-
-		Scanner scan = new Scanner(System.in);
-		String valueCommand = scan.nextLine();
-
 		try {
+
+			System.out.println("--------------------- Memory Management Unit Control -----------------------");
+			System.out.println("|                                                                          |");
+			System.out.println("| * Escolha o algoritmo algoritmos de gerenciamento de partições variáveis!|");
+			System.out.println("|     1. First-Fit                                                         |");
+			System.out.println("|     2. Best-Fit                                                          |");
+			System.out.println("|     3. Worst-Fit                                                         |");
+			System.out.println("|     4. Circular-fit                                                      |");
+			System.out.println("|                                                                          |");
+			System.out.println("----------------------------------------------------------------------------");
+
+			Others data = new Others();
+			data.ImportDATA();
+
+			Scanner scan = new Scanner(System.in);
+			String valueCommand = scan.nextLine();
 
 			int command = Integer.parseInt(valueCommand);
 
@@ -49,8 +52,9 @@ public class Unit {
 				throw new Exception();
 			}
 
-		} catch (Exception ex) { // exception que executa inicia a main novamente informando que o valor inserido era inválido
-			System.out.println("Comando inválido, insira um comando válido!"); 
+		} catch (Exception ex) { // exception que executa inicia a main novamente informando que o valor inserido
+									// era inválido
+			System.out.println("Comando inválido, insira um comando válido!");
 			main(args);
 		}
 	}
