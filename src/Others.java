@@ -32,7 +32,7 @@ public class Others {
 					
 					System.out.println("Valor de " + x + " " + items[x]);
 					
-					
+					//sadfsdfsdf
 				}
 
 			}
