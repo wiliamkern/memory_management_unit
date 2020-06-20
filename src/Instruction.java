@@ -4,7 +4,7 @@ public class Instruction { // instrução a ser executada pelo sistema
 		public String typeOperation; // sw ou lw (tipo de operação a ser executada)
 		public String value;
 		public int storagePosition;
-		//testttS
+		//testttSt
 		
 		public String getTypeOperation() {
 			return typeOperation;
