@@ -53,7 +53,7 @@ public class MemoryManagement {
 			System.out.println("Acesso Ilegal de memória");
 		}
 	}
-
+//
 	public String read(Process processo, int postion) {
 		String retorno = "";
 		if (verificaAcessoIlegal(processo, postion, 4)) {
