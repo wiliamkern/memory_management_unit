@@ -29,7 +29,7 @@ public class MemoryManagement {
 	}
 
 	public boolean verificaAcessoIlegal(Process processo, int postion, int tamanho) {
-		if (processo.getRangeFinal() = -1) {
+		if (processo.getRangeFinal() == -1) {
 			return false;
 		}
 		if ((postion + tamanho) < (processo.getRangeFinal() - processo.getRangeInicio())) {
