@@ -4,7 +4,7 @@ public class MemoryManagement {
 	// Classe com as operações de gerenciamento de memória.
 	private ArrayList<String> memory = new ArrayList<String>();
 	private static int ultimaMemoria = 0;
-	final static int memoriaTotal = 100000;
+	final static int memoriaTotal = 1000000;
 
 	private void iniciarMemória() {
 		memory = new ArrayList<String>();
@@ -53,7 +53,7 @@ public class MemoryManagement {
 			System.out.println("Acesso Ilegal de memória");
 		}
 	}
-//
+//test
 	public String read(Process processo, int postion) {
 		String retorno = "";
 		if (verificaAcessoIlegal(processo, postion, 4)) {
