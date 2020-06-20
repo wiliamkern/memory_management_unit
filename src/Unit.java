@@ -9,7 +9,7 @@ public class Unit {
 
 			System.out.println("--------------------- Memory Management Unit Control -----------------------");
 			System.out.println("|                                                                          |");
-			System.out.println("| * Escolha o algoritmo algoritmos de gerenciamento de partições variáveis!|");
+			System.out.println("| * Escolha o algoritmo de gerenciamento de partições variáveis!           |");
 			System.out.println("|     1. First-Fit                                                         |");
 			System.out.println("|     2. Best-Fit                                                          |");
 			System.out.println("|     3. Worst-Fit                                                         |");
@@ -31,23 +31,23 @@ public class Unit {
 				switch (command) {
 
 				case (1):
-					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de
-																					// memória por First-fit
+					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de memória por First-fit
+					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
 					break;
 				case (2):
-					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória
-																					// por Best-Fit
+					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória por Best-Fit
+					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
 					break;
 				case (3):
-					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de
-																					// memória por worst-fit
+					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de memória por worst-fit
+					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
 					break;
 				case (4):
-					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de
-																						// memória por circular-fit
+					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de memória por circular-fit
+					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
 					break;
 				}
