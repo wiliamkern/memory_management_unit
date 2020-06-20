@@ -8,7 +8,7 @@ public class Process {
 	
 	ArrayList<Instruction> processTasks = new ArrayList<Instruction>(); // instruções a serem executadas pelo processo
 	
-	private int rangeInicio;
+	private int rangeInicial;
 	
 	private int rangeFinal;
 
@@ -24,7 +24,7 @@ public class Process {
 		return sizeRequired;
 	}
 
-	public void setSizeRequired(double sizeRequired) {
+	public void setSizeRequired(int sizeRequired) {
 		this.sizeRequired = sizeRequired;
 	}
 
@@ -36,8 +36,8 @@ public class Process {
 		this.processTasks = processTasks;
 	}
 	
-	public double getRangeInicio() {
-		return rangeInicio;
+	public double getRangeInicial() {
+		return rangeInicial;
 	}
 	
 	public double getRangeFinal() {
@@ -45,8 +45,8 @@ public class Process {
 	}
 	
 	private void getRanges(){
-		rangeFinal = MemoryManagement.getRangeProcesso(sizeRequired);
-		rangeInicial= rangeFinal - sizeRequired;
+		rangeFinal = MemoryManagement.getRangeProcesso((int) sizeRequired);
+		rangeInicial= rangeFinal - (int) sizeRequired;
 	}
 	
 }

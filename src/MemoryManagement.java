@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class MemoryManagement {
 	// Classe com as operações de gerenciamento de memória.
 	private ArrayList<String> memory = new ArrayList<String>();
-	private int ultimaMemoria = 0;
-	final int memoriaTotal = 100000;
+	private static int ultimaMemoria = 0;
+	final static int memoriaTotal = 100000;
 
 	private void iniciarMemória() {
 		memory = new ArrayList<String>();
@@ -18,7 +18,7 @@ public class MemoryManagement {
 	}
 
 	// Retorna o final do range do processo
-	public int getRangeProcesso(int quant) {
+	public static int getRangeProcesso(int quant) {
 		if (memoriaTotal < (ultimaMemoria + quant)) {
 			System.out.println("Sem memória livre");
 			return -1;
@@ -32,7 +32,7 @@ public class MemoryManagement {
 		if (processo.getRangeFinal() == -1) {
 			return false;
 		}
-		if ((postion + tamanho) < (processo.getRangeFinal() - processo.getRangeInicio())) {
+		if ((postion + tamanho) < (processo.getRangeFinal() - processo.getRangeInicial())) {
 			for (int i = 0; i < tamanho; i++) {
 				if (memory.get(postion + i).length() > 0) {
 					// Acesso ilegal de memória
