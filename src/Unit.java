@@ -31,47 +31,35 @@ public class Unit {
 				switch (command) {
 
 				case (1):
-<<<<<<< HEAD
 					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de memória por First-fit
 					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
-=======
 					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de
 					ParticionManagement.setProcessos(data.ImportDATA());
->>>>>>> branch 'master' of https://github.com/wiliamkern/memory_management_unit.git
 					break;
 				case (2):
-<<<<<<< HEAD
 					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória por Best-Fit
 					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
-=======
 					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória
 																					// por Best-Fit
 					ParticionManagement.setProcessos(data.ImportDATA());
->>>>>>> branch 'master' of https://github.com/wiliamkern/memory_management_unit.git
 					break;
 				case (3):
-<<<<<<< HEAD
 					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de memória por worst-fit
 					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
-=======
 					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de
 																					// memória por worst-fit
 					ParticionManagement.setProcessos(data.ImportDATA());
->>>>>>> branch 'master' of https://github.com/wiliamkern/memory_management_unit.git
 					break;
 				case (4):
-<<<<<<< HEAD
 					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de memória por circular-fit
 					data.createFile(); // cria o memoria.txt
 					processList = data.ImportDATA();
-=======
 					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de
 																						// memória por circular-fit
 					ParticionManagement.setProcessos(data.ImportDATA());
->>>>>>> branch 'master' of https://github.com/wiliamkern/memory_management_unit.git
 					break;
 				}
 
