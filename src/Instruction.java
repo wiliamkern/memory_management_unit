@@ -4,6 +4,7 @@ public class Instruction { // instrução a ser executada pelo sistema
 		public String typeOperation; // sw ou lw (tipo de operação a ser executada)
 		public String value;
 		public int storagePosition;
+		public String ES;
 		//testttSt
 		
 		public String getTypeOperation() {
@@ -23,6 +24,12 @@ public class Instruction { // instrução a ser executada pelo sistema
 		}
 		public void setStoragePosition(int storagePosition) {
 			this.storagePosition = storagePosition;
+		}
+		public String getES() {
+			return ES;
+		}
+		public void setES(String eS) {
+			ES = eS;
 		}
 		
 }

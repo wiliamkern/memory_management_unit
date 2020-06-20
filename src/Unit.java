@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Unit {
@@ -17,10 +18,10 @@ public class Unit {
 			System.out.println("----------------------------------------------------------------------------");
 
 			Others data = new Others();
-			data.ImportDATA();
 
 			Scanner scan = new Scanner(System.in);
 			String valueCommand = scan.nextLine();
+			ArrayList<Process> processList = new ArrayList<Process>();
 
 			int command = Integer.parseInt(valueCommand);
 
@@ -32,18 +33,22 @@ public class Unit {
 				case (1):
 					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de
 																					// memória por First-fit
+					processList = data.ImportDATA();
 					break;
 				case (2):
 					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória
 																					// por Best-Fit
+					processList = data.ImportDATA();
 					break;
 				case (3):
 					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de
 																					// memória por worst-fit
+					processList = data.ImportDATA();
 					break;
 				case (4):
 					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de
 																						// memória por circular-fit
+					processList = data.ImportDATA();
 					break;
 				}
 

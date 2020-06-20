@@ -24,20 +24,44 @@ public class Others {
 
 				process.pid = Integer.parseInt(items[0]); // lê o identificador do processo
 				process.sizeRequired = Double.parseDouble(items[1]); // lê o tamanho requerido
-				
-				//process.processTasks.add(new Instruction());
-								
+						
 				for (int x = 2; x < items.length; x++) { // começa a ler da posição 2 do vetor pois as 2 primeiras sempre são o pid e o tamanho que o processo precisa
 					
-					
-					System.out.println("Valor de " + x + " " + items[x]);
-					
-					//sadfsdfsdf
-				}
+					if(!items[x].equals("-")) {
 
+						Instruction intructionData = new Instruction();
+						
+						String[] splitInstruction = items[x].split(",");
+						
+						if(items[0].equals("ES")) {
+							intructionData.ES = splitInstruction[0];
+							
+							processList.add(process);
+						}else {
+							if(splitInstruction[0].equals("sw")) {
+								intructionData.typeOperation = splitInstruction[0];
+								intructionData.value = splitInstruction[1];
+								intructionData.storagePosition = Integer.parseInt(splitInstruction[2]);
+								
+								processList.add(process);
+							}else {
+								intructionData.typeOperation = splitInstruction[0];
+								intructionData.storagePosition = Integer.parseInt(splitInstruction[1]);
+								
+								processList.add(process);
+							}
+							
+							
+							//process.processTasks.add(intructionData);
+						}
+					}
+					
+					processList.add(process);
+				}
 			}
 
-			return new ArrayList<Process>();
+			int a = 1;
+			return processList.size() > 0 ? processList : new ArrayList<Process>();
 		} catch (Exception ex) {
 			return new ArrayList<Process>();
 		}
