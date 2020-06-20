@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class MemoryManagement {
-	// Classe com as operações de gerenciamento de memória
+	// Classe com as operações de gerenciamento de memória.
 	private ArrayList<String> memory = new ArrayList<String>();
 	private int ultimaMemoria = 0;
 	final int memoriaTotal = 100000;
