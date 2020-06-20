@@ -7,6 +7,10 @@ public class Process {
 	public double sizeRequired; // tamanho de alocação requerido pelo processo
 	
 	ArrayList<Instruction> processTasks = new ArrayList<Instruction>(); // instruções a serem executadas pelo processo
+	
+	private int rangeInicio;
+	
+	private int rangeFinal;
 
 	public int getPid() {
 		return pid;
@@ -30,6 +34,19 @@ public class Process {
 
 	public void setProcessTasks(ArrayList<Instruction> processTasks) {
 		this.processTasks = processTasks;
+	}
+	
+	public double getRangeInicio() {
+		return rangeInicio;
+	}
+	
+	public double getRangeFinal() {
+		return rangeFinal;
+	}
+	
+	private void getRanges(){
+		rangeFinal = MemoryManagement.getRangeProcesso(sizeRequired);
+		rangeInicial= rangeFinal - sizeRequired;
 	}
 	
 }
