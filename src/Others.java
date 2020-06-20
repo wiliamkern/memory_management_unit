@@ -29,38 +29,33 @@ public class Others {
 					
 					if(!items[x].equals("-")) {
 
-						Instruction intructionData = new Instruction();
+						Instruction instructionData = new Instruction();
 						
 						String[] splitInstruction = items[x].split(",");
 						
-						if(items[0].equals("ES")) {
-							intructionData.ES = splitInstruction[0];
+						if(splitInstruction[0].equals("ES")) {
+							instructionData.ES = splitInstruction[0];
 							
-							processList.add(process);
+							process.processTasks.add(instructionData);
 						}else {
 							if(splitInstruction[0].equals("sw")) {
-								intructionData.typeOperation = splitInstruction[0];
-								intructionData.value = splitInstruction[1];
-								intructionData.storagePosition = Integer.parseInt(splitInstruction[2]);
+								instructionData.typeOperation = splitInstruction[0];
+								instructionData.value = splitInstruction[1];
+								instructionData.storagePosition = Integer.parseInt(splitInstruction[2]);
 								
-								processList.add(process);
+								process.processTasks.add(instructionData);
 							}else {
-								intructionData.typeOperation = splitInstruction[0];
-								intructionData.storagePosition = Integer.parseInt(splitInstruction[1]);
+								instructionData.typeOperation = splitInstruction[0];
+								instructionData.storagePosition = Integer.parseInt(splitInstruction[1]);
 								
-								processList.add(process);
+								process.processTasks.add(instructionData);
 							}
-							
-							
-							//process.processTasks.add(intructionData);
 						}
 					}
-					
-					processList.add(process);
 				}
+				processList.add(process);
 			}
 
-			int a = 1;
 			return processList.size() > 0 ? processList : new ArrayList<Process>();
 		} catch (Exception ex) {
 			return new ArrayList<Process>();
