@@ -10,7 +10,7 @@ public class Others {
 
 			System.out.println("Importando arquivo dos processos...");
 			Scanner input = new Scanner(
-					new File("C:\\Users\\Wiliam Kern Franco\\git\\memory_management_unit\\src\\Files\\processos1.txt")); // faz
+					new File("C:\\Users\\Wiliam Kern Franco\\git\\memory_management_unit\\src\\Files\\processos2.txt")); // faz
 																															// a
 																															// leitura
 																															// do
@@ -38,20 +38,22 @@ public class Others {
 
 						Instruction instructionData = new Instruction();
 
-						String[] splitInstruction = items[x].split(",");
+						String[] splitInstruction = items[x].split(","); // split dos dados de instruções do processo,
+																			// quebrando cada instrução pelas virgulas
 
-						if (splitInstruction[0].equals("ES")) {
+						// verifica o tipo de operação 
+						if (splitInstruction[0].equals("ES")) { // populando os dados para ES
 							instructionData.ES = splitInstruction[0];
 
 							process.processTasks.add(instructionData);
 						} else {
-							if (splitInstruction[0].equals("sw")) {
+							if (splitInstruction[0].equals("sw")) { // populando os dados para sw
 								instructionData.typeOperation = splitInstruction[0];
 								instructionData.value = splitInstruction[1];
 								instructionData.storagePosition = Integer.parseInt(splitInstruction[2]);
 
 								process.processTasks.add(instructionData);
-							} else {
+							} else { // populando as variaveis para lw
 								instructionData.typeOperation = splitInstruction[0];
 								instructionData.storagePosition = Integer.parseInt(splitInstruction[1]);
 
@@ -60,11 +62,19 @@ public class Others {
 						}
 					}
 				}
+
 				processList.add(process);
 			}
+			System.out.println("Dados de processos importados com sucesso!!");
+			System.out.println(
+					processList.size() > 0 ? "***Total de " + processList.size() + " processos foram encontrados***"
+							: "Arquivo de processos está vazio");
+			System.out.println("--------------------------------------------");
 
 			return processList.size() > 0 ? processList : new ArrayList<Process>();
 		} catch (Exception ex) {
+			System.out.println("Arquivo de processos não encontrado!"); // caso não encontrar o aquivo ele cai na
+																		// exception que vai retornar uma lista vazia
 			return new ArrayList<Process>();
 		}
 	}
@@ -75,19 +85,16 @@ public class Others {
 
 			System.out.println("--------------------------------------------");
 			System.out.println("Criando o arquivo memoria.txt");
-			System.out.println("--------------------------------------------");
-			
-			PrintWriter writer = new PrintWriter("memoria.txt", "UTF-8");
+
+			PrintWriter writer = new PrintWriter("memoria.txt", "UTF-8"); // cria o arquivo memoria.txt
 			writer.println("The first line");
 			writer.println("The second line");
 			writer.close();
 
-			System.out.println("--------------------------------------------");
 			System.out.println("Arquivo memoria.txt criado com Sucesso!!");
 			System.out.println("--------------------------------------------");
 
 		} catch (Exception ex) {
-			System.out.println("--------------------------------------------");
 			System.out.println("Não foi possível criar o arquivo memoria.txt");
 			System.out.println("--------------------------------------------");
 		}
