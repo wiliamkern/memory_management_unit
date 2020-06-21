@@ -9,7 +9,7 @@ public class MemoryManagement {
 		return particoes;
 	}
 
-	private void iniciarMemória() {
+	private void iniciarMemória() { // criação as partições
 		Particion particion1 = new Particion(50000);
 		particoes.add(particion1);
 		Particion particion2 = new Particion(50000);
