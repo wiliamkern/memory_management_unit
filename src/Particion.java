@@ -25,6 +25,10 @@ public class Particion {
 		}
 	}
 	
+	public int getEspacoLivre() {
+		return size - ultimaMemoria;
+	}
+	
 	
 	public boolean verificaAcessoIlegal(Process processo, int postion, int tamanho) {
 		if (processo.getRangeFinal() == -1) {

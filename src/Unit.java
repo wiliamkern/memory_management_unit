@@ -31,26 +31,34 @@ public class Unit {
 				switch (command) {
 
 				case (1):
+					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de memória por First-fit
 					data.createFile(); // cria o memoria.txt
+					ParticionManagement.setTipoAlocacao(ParticionManagement.firstFit);
 					
 					ParticionManagement.setProcessos(data.ImportDATA());
 					break;
 				case (2):
+					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória por Best-Fit
 					data.createFile(); // cria o memoria.txt
+					ParticionManagement.setTipoAlocacao(ParticionManagement.bestFit);
 
 					ParticionManagement.setProcessos(data.ImportDATA());
 					break;
 				case (3):
+					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de memória por worst-fit
 					data.createFile(); // cria o memoria.txt
+					ParticionManagement.setTipoAlocacao(ParticionManagement.worstFit);
 
 					ParticionManagement.setProcessos(data.ImportDATA());
 					break;
 				case (4):
+					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de memória por circular-fit
 					data.createFile(); // cria o memoria.txt
+					ParticionManagement.setTipoAlocacao(ParticionManagement.circularFit);
 					
 					ParticionManagement.setProcessos(data.ImportDATA());
 					break;

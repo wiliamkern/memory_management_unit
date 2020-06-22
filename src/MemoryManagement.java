@@ -9,7 +9,13 @@ public class MemoryManagement {
 		return particoes;
 	}
 
-	private void iniciarMemória() { // criação as partições
+	static void iniciarMemória() { // criação as partições
+		
+		memory = new ArrayList<String>();
+		for (int i = 500000; i > 1; i--) {
+			memory.add("X");
+		}
+		
 		Particion particion1 = new Particion(50000);
 		particoes.add(particion1);
 		Particion particion2 = new Particion(50000);
@@ -30,11 +36,6 @@ public class MemoryManagement {
 		particoes.add(particion9);
 		Particion particion10 = new Particion(70000);
 		particoes.add(particion10);
-		
-		memory = new ArrayList<String>();
-		for (int i = 500000; i > 1; i--) {
-			memory.add("X");
-		}
 //		for (int i = 500000; i > 1; i--) {
 //			memory.add("");
 //		}
