@@ -5,20 +5,20 @@ import java.util.Scanner;
 
 public class Others {
 
+	static PrintWriter writer;
+	
 	public ArrayList<Process> ImportDATA() {
 		try {
-
 			System.out.println("Importando arquivo dos processos...");
 			Scanner input = new Scanner(
-					new File("C:\\Users\\Wiliam Kern Franco\\git\\memory_management_unit\\src\\Files\\processos2.txt")); // faz
+					new File("C:\\Users\\Pichau\\git\\memory_management_unit\\src\\Files\\processos2.txt")); // faz
 																															// a
 																															// leitura
 																															// do
 																															// arquivo
 
-			ArrayList<Process> processList = new ArrayList<Process>();
+			ParticionManagement.setProcessos(new ArrayList<Process>());
 			Process process = new Process();
-			Instruction instruction = new Instruction();
 
 			while (input.hasNextLine()) { // lê processo por processo (linha a linha)
 
@@ -30,7 +30,6 @@ public class Others {
 
 				process.pid = Integer.parseInt(items[0]); // lê o identificador do processo
 				process.sizeRequired = Double.parseDouble(items[1]); // lê o tamanho requerido
-
 				for (int x = 2; x < items.length; x++) { // começa a ler da posição 2 do vetor pois as 2 primeiras
 															// sempre são o pid e o tamanho que o processo precisa
 
@@ -62,16 +61,15 @@ public class Others {
 						}
 					}
 				}
-
-				processList.add(process);
+				ParticionManagement.addProcesso(process);
 			}
 			System.out.println("Dados de processos importados com sucesso!!");
 			System.out.println(
-					processList.size() > 0 ? "***Total de " + processList.size() + " processos foram encontrados***"
+					ParticionManagement.getProcessos().size() > 0 ? "***Total de " + ParticionManagement.getProcessos().size() + " processos foram encontrados***"
 							: "Arquivo de processos está vazio");
 			System.out.println("--------------------------------------------");
 
-			return processList.size() > 0 ? processList : new ArrayList<Process>();
+			return ParticionManagement.getProcessos().size() > 0 ? ParticionManagement.getProcessos() : new ArrayList<Process>();
 		} catch (Exception ex) {
 			System.out.println("Arquivo de processos não encontrado!"); // caso não encontrar o aquivo ele cai na
 																		// exception que vai retornar uma lista vazia
@@ -86,10 +84,10 @@ public class Others {
 			System.out.println("--------------------------------------------");
 			System.out.println("Criando o arquivo memoria.txt");
 
-			PrintWriter writer = new PrintWriter("memoria.txt", "UTF-8"); // cria o arquivo memoria.txt
+			writer = new PrintWriter("memoria.txt", "UTF-8"); // cria o arquivo memoria.txt
 			writer.println("The first line");
 			writer.println("The second line");
-			writer.close();
+//			writer.close();
 
 			System.out.println("Arquivo memoria.txt criado com Sucesso!!");
 			System.out.println("--------------------------------------------");

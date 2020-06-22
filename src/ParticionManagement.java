@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class ParticionManagement {
 
 	static private ArrayList<Process> processos;
+	
+	static private ArrayList<Process> processosES;
 
 	final static public String firstFit = "firstFit";
 
@@ -22,9 +24,31 @@ public class ParticionManagement {
 		ParticionManagement.tipoAlocacao = tipoAlocacao;
 	}
 
-	public void alocaProcessos(ArrayList<Process> processos) {
-
+	public static void alocaProcessos() {
+		processosES = new ArrayList<Process>();
 		for (Process process : processos) {
+			if (process.getParticao() == null) {
+				switch (tipoAlocacao) {
+				case (firstFit):
+					process.setParticao(getParticionFirstFit(process));
+					break;
+				case (worstFit):
+					process.setParticao(getParticionBestFit(process));
+					break;
+				case (bestFit):
+					process.setParticao(getParticionWorstFit(process));
+					break;
+				case (circularFit):
+					process.setParticao(getParticionCircularFit(process));
+					break;
+				}
+			}
+			process.executar();
+		}
+		
+		
+		
+		for (Process process : processosES) {
 			if (process.getParticao() == null) {
 				switch (tipoAlocacao) {
 				case (firstFit):
@@ -46,7 +70,7 @@ public class ParticionManagement {
 	}
 
 	// Executa o first fit pra pegar uma particao
-	private Particion getParticionFirstFit(Process processo) {
+	private static Particion getParticionFirstFit(Process processo) {
 		for (Particion particao : MemoryManagement.getParticoes()) {
 			if (particao.getEspacoLivre() > processo.getSizeRequired()) {
 				return particao;
@@ -56,7 +80,7 @@ public class ParticionManagement {
 	}
 
 	// Executa o best fit pra pegar uma particao
-	private Particion getParticionBestFit(Process processo) {
+	private static Particion getParticionBestFit(Process processo) {
 		int espacoEficiente = 99999999;
 		Particion particionEficiente = null;
 		for (Particion particao : MemoryManagement.getParticoes()) {
@@ -69,7 +93,7 @@ public class ParticionManagement {
 	}
 
 	// Executa o worst fit pra pegar uma particao
-	private Particion getParticionWorstFit(Process processo) {
+	private static Particion getParticionWorstFit(Process processo) {
 		int espacoEficiente = 0;
 		Particion particionEficiente = null;
 		for (Particion particao : MemoryManagement.getParticoes()) {
@@ -82,7 +106,7 @@ public class ParticionManagement {
 	}
 
 	// Executa o worst fit pra pegar uma particao
-	private Particion getParticionCircularFit(Process processo) {
+	private static Particion getParticionCircularFit(Process processo) {
 		int espacoEficiente = 0;
 		Particion particionEficiente = null;
 		for (Particion particao : MemoryManagement.getParticoes()) {
@@ -93,6 +117,10 @@ public class ParticionManagement {
 
 	public static void addProcesso(Process processo) {
 		processos.add(processo);
+	}
+	
+	public static void addProcessoES(Process processo) {
+		processosES.add(processo);
 	}
 
 	public static ArrayList<Process> getProcessos() {

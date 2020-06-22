@@ -10,7 +10,7 @@ public class Particion {
 	public Particion(int size){
 		this.size = size;
 		for (int i = 0; i < size; i++) {
-			memory.add("");
+			memory.add(" ");
 		}
 	}
 	
@@ -34,9 +34,10 @@ public class Particion {
 		if (processo.getRangeFinal() == -1) {
 			return false;
 		}
-		if ((postion + tamanho) < (processo.getRangeFinal() - processo.getRangeInicial())) {
+		postion = postion-1;
+		if ((postion + tamanho) <= (processo.getRangeFinal() - processo.getRangeInicial())) {
 			for (int i = 0; i < tamanho; i++) {
-				if (memory.get(postion + i).length() > 0) {
+				if (!memory.get(postion + i).equals(" ")) {
 					// Acesso ilegal de memória
 					return false;
 				}
@@ -58,18 +59,25 @@ public class Particion {
 //test
 	public String read(Process processo, int postion) {
 		String retorno = "";
-		if (verificaAcessoIlegal(processo, postion, 4)) {
+		
+		if ((postion + 4) <= (processo.getRangeFinal() - processo.getRangeInicial())) {
 			for (int i = 0; i < 4; i++) {
 				retorno = retorno + memory.get(postion + i);
 			}
 		}
+		System.out.println(retorno);
 		return retorno;
 	}
 	
 	
 	
 	
-	
+	public void escreveMemoria() {
+		Others.writer.println("Particion\n");
+		for(String texto: memory) {
+			Others.writer.print(texto);
+		}
+	}
 	
 	
 }

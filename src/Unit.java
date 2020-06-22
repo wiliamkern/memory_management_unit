@@ -27,13 +27,12 @@ public class Unit {
 
 			if (command > 0 && command < 5) { // verifica se a opção escolhida é válida para um dos gerenciamentos de
 												// partições variáveis
-
+				data.createFile(); // cria o memoria.txt
 				switch (command) {
 
 				case (1):
 					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de memória por First-fit
-					data.createFile(); // cria o memoria.txt
 					ParticionManagement.setTipoAlocacao(ParticionManagement.firstFit);
 					
 					ParticionManagement.setProcessos(data.ImportDATA());
@@ -41,7 +40,6 @@ public class Unit {
 				case (2):
 					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória por Best-Fit
-					data.createFile(); // cria o memoria.txt
 					ParticionManagement.setTipoAlocacao(ParticionManagement.bestFit);
 
 					ParticionManagement.setProcessos(data.ImportDATA());
@@ -49,7 +47,6 @@ public class Unit {
 				case (3):
 					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de memória por worst-fit
-					data.createFile(); // cria o memoria.txt
 					ParticionManagement.setTipoAlocacao(ParticionManagement.worstFit);
 
 					ParticionManagement.setProcessos(data.ImportDATA());
@@ -57,7 +54,6 @@ public class Unit {
 				case (4):
 					MemoryManagement.iniciarMemória();
 					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de memória por circular-fit
-					data.createFile(); // cria o memoria.txt
 					ParticionManagement.setTipoAlocacao(ParticionManagement.circularFit);
 					
 					ParticionManagement.setProcessos(data.ImportDATA());
@@ -68,9 +64,12 @@ public class Unit {
 				// caso for um valor fora do intervalo dispara uma exception
 				throw new Exception();
 			}
-
+			ParticionManagement.alocaProcessos();
+			MemoryManagement.escreveMemoria();
+			Others.writer.close();
 		} catch (Exception ex) { // exception que executa inicia a main novamente informando que o valor inserido
 									// era inválido
+			ex.printStackTrace();
 			System.out.println("Comando inválido, insira um comando válido!");
 			main(args);
 		}

@@ -41,5 +41,14 @@ public class MemoryManagement {
 //		}
 //		ultimaMemoria = 500000;
 	}
+	
+	public static void escreveMemoria() {
+		for(String texto: memory) {
+			Others.writer.println(texto);
+		}
+		for(Particion particao: particoes) {
+			particao.escreveMemoria();
+		}
+	}
 
 }

@@ -5,6 +5,7 @@ public class Instruction { // instrução a ser executada pelo sistema
 		public String value;
 		public int storagePosition;
 		public String ES;
+		public boolean processado = false;
 		//testttSt
 		
 		public String getTypeOperation() {

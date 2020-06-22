@@ -62,22 +62,17 @@ public class Process {
 	boolean executar() {
 		getRanges();
 		for (Instruction instrucao : processTasks) {
-			if (instrucao.getES().equals("ES")) {
-				try {
-					instrucao.setES("");
-					Process novoProcesso = (Process) this.clone();
-					ParticionManagement.addProcesso(novoProcesso);
-				} catch (CloneNotSupportedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			if ("ES".equals(instrucao.getES())) {
+				instrucao.setES("");
+				// Process novoProcesso = this.clone();
+				ParticionManagement.addProcessoES(this);
 			} else {
-				if (instrucao.typeOperation.equals("sw")) {
+				if (instrucao.typeOperation != null && instrucao.typeOperation.equals("sw")) {
 					particao.write(this, instrucao.getStoragePosition(), instrucao.getValue());
 				} else {
 					particao.read(this, instrucao.getStoragePosition());
 				}
-				processTasks.remove(instrucao);
+				instrucao.processado = true;
 			}
 		}
 		return true;
