@@ -34,7 +34,7 @@ public class Particion {
 		if (processo.getRangeFinal() == -1) {
 			return false;
 		}
-		postion = postion-1;
+//		postion = postion-1;
 		if ((postion + tamanho) <= (processo.getRangeFinal() - processo.getRangeInicial())) {
 			for (int i = 0; i < tamanho; i++) {
 				if (!memory.get(postion + i).equals(" ")) {
@@ -73,9 +73,9 @@ public class Particion {
 	
 	
 	public void escreveMemoria() {
-		Others.writer.println("Particion\n");
+		Others.writer.println("Particion Tamanho: " + size);
 		for(String texto: memory) {
-			Others.writer.print(texto);
+			Others.writer.println(texto);
 		}
 	}
 	

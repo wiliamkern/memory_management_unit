@@ -49,12 +49,12 @@ public class Others {
 							if (splitInstruction[0].equals("sw")) { // populando os dados para sw
 								instructionData.typeOperation = splitInstruction[0];
 								instructionData.value = splitInstruction[1];
-								instructionData.storagePosition = Integer.parseInt(splitInstruction[2]);
+								instructionData.storagePosition = Integer.parseInt(splitInstruction[2])-1;
 
 								process.processTasks.add(instructionData);
 							} else { // populando as variaveis para lw
 								instructionData.typeOperation = splitInstruction[0];
-								instructionData.storagePosition = Integer.parseInt(splitInstruction[1]);
+								instructionData.storagePosition = Integer.parseInt(splitInstruction[1])-1;
 
 								process.processTasks.add(instructionData);
 							}
