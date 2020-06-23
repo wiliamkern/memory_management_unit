@@ -112,7 +112,8 @@ public class PartitionManagement {
 		int espacoEficiente = 0;
 		Partition particionEficiente = null;
 		for (Partition particao : MemoryManagement.getParticoes()) {
-			
+			particionEficiente = particao;
+			espacoEficiente = particao.getEspacoLivre();
 		}
 		return particionEficiente;
 	}

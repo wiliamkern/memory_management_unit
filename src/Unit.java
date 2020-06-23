@@ -17,6 +17,8 @@ public class Unit {
 			System.out.println("|                                                                          |");
 			System.out.println("----------------------------------------------------------------------------");
 
+			System.out.print("->"); // seta para indicar o local de por a opção
+			
 			Others data = new Others();
 
 			Scanner scan = new Scanner(System.in);
@@ -24,7 +26,7 @@ public class Unit {
 			//ArrayList<Process> processList = new ArrayList<Process>();
 
 			int command = Integer.parseInt(valueCommand);
-
+			
 			if (command > 0 && command < 5) { // verifica se a opção escolhida é válida para um dos gerenciamentos de
 												// partições variáveis
 				data.createFile(); // cria o memoria.txt
