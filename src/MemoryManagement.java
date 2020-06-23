@@ -2,40 +2,40 @@ import java.util.ArrayList;
 
 public class MemoryManagement {
 	// Classe com as operações de gerenciamento de memória.
-	private static ArrayList<String> memory = new ArrayList<String>();
-	private static ArrayList<Particion> particoes = new ArrayList<Particion>();
+	private static ArrayList<String> memory = new ArrayList<String>(); // arraylist do tipo string para simular a memória
+	private static ArrayList<Partition> partitions = new ArrayList<Partition>(); // arraylist do tipo partição para manipular as partições da memória
 
-	public static ArrayList<Particion> getParticoes() {
-		return particoes;
+	public static ArrayList<Partition> getParticoes() {
+		return partitions;
 	}
 
-	static void iniciarMemória() { // criação as partições
+	static void startMemory() { // criação as partições
 		
-		memory = new ArrayList<String>();
+		memory = new ArrayList<String>(); // popula os primeiros 50000 bits da memória com o sistema operacional
 		for (int i = 500000; i > 1; i--) {
 			memory.add("X");
 		}
 		
-		Particion particion1 = new Particion(50000);
-		particoes.add(particion1);
-		Particion particion2 = new Particion(50000);
-		particoes.add(particion2);
-		Particion particion3 = new Particion(40000);
-		particoes.add(particion3);
-		Particion particion4 = new Particion(60000);
-		particoes.add(particion4);
-		Particion particion5 = new Particion(10000);
-		particoes.add(particion5);
-		Particion particion6 = new Particion(90000);
-		particoes.add(particion6);
-		Particion particion7 = new Particion(80000);
-		particoes.add(particion7);
-		Particion particion8 = new Particion(20000);
-		particoes.add(particion8);
-		Particion particion9 = new Particion(30000);
-		particoes.add(particion9);
-		Particion particion10 = new Particion(70000);
-		particoes.add(particion10);
+		Partition particion1 = new Partition(50000); //partições com tamanhos diferentes para os algoritmos de alocação trabalharem
+		partitions.add(particion1);					// as partições criadas fecha os outros 500000 bits que poderão ser usados pelo software
+		Partition particion2 = new Partition(50000);
+		partitions.add(particion2);
+		Partition particion3 = new Partition(40000);
+		partitions.add(particion3);
+		Partition particion4 = new Partition(60000);
+		partitions.add(particion4);
+		Partition particion5 = new Partition(10000);
+		partitions.add(particion5);
+		Partition particion6 = new Partition(90000);
+		partitions.add(particion6);
+		Partition particion7 = new Partition(80000);
+		partitions.add(particion7);
+		Partition particion8 = new Partition(20000);
+		partitions.add(particion8);
+		Partition particion9 = new Partition(30000);
+		partitions.add(particion9);
+		Partition particion10 = new Partition(70000);
+		partitions.add(particion10);
 //		for (int i = 500000; i > 1; i--) {
 //			memory.add("");
 //		}
@@ -46,7 +46,7 @@ public class MemoryManagement {
 		for(String texto: memory) {
 			Others.writer.println(texto);
 		}
-		for(Particion particao: particoes) {
+		for(Partition particao: partitions) {
 			particao.escreveMemoria();
 		}
 	}

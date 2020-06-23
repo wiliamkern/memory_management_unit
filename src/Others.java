@@ -1,23 +1,36 @@
+import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Others {
 
-	static PrintWriter writer;
+	static PrintWriter writer; // declaração do writer para criar o memoria.txt e depois escrever os dados dos processos
 	
 	public ArrayList<Process> ImportDATA() {
 		try {
-			System.out.println("Importando arquivo dos processos...");
-			Scanner input = new Scanner(
-					new File("C:\\Users\\Pichau\\git\\memory_management_unit\\src\\Files\\processos2.txt")); // faz
+			
+			System.out.print("Insira o local que está o arquivo dos processos.....");
+			
+			String importLocation = "";
+			Scanner directory = new Scanner(System.in);
+			
+			importLocation = directory.nextLine();
+			
+		/*	Scanner input = new Scanner(
+					new File("C:\\Users\\Wiliam Kern Franco\\git\\memory_management_unit\\src\\Files\\processos1.txt")); // faz
 																															// a
 																															// leitura
 																															// do
-																															// arquivo
-
-			ParticionManagement.setProcessos(new ArrayList<Process>());
+																															// arquivo*/
+			Scanner input = new Scanner(new File(importLocation)); // faz a leitura do arquivo
+			
+			System.out.println("Importando arquivo dos processos...");
+			
+			PartitionManagement.setProcessos(new ArrayList<Process>());
+			
 			Process process = new Process();
 
 			while (input.hasNextLine()) { // lê processo por processo (linha a linha)
@@ -61,15 +74,15 @@ public class Others {
 						}
 					}
 				}
-				ParticionManagement.addProcesso(process);
+				PartitionManagement.addProcesso(process);
 			}
 			System.out.println("Dados de processos importados com sucesso!!");
 			System.out.println(
-					ParticionManagement.getProcessos().size() > 0 ? "***Total de " + ParticionManagement.getProcessos().size() + " processos foram encontrados***"
+					PartitionManagement.getProcessos().size() > 0 ? "***Total de " + PartitionManagement.getProcessos().size() + " processos foram encontrados***"
 							: "Arquivo de processos está vazio");
 			System.out.println("--------------------------------------------");
 
-			return ParticionManagement.getProcessos().size() > 0 ? ParticionManagement.getProcessos() : new ArrayList<Process>();
+			return PartitionManagement.getProcessos().size() > 0 ? PartitionManagement.getProcessos() : new ArrayList<Process>();
 		} catch (Exception ex) {
 			System.out.println("Arquivo de processos não encontrado!"); // caso não encontrar o aquivo ele cai na
 																		// exception que vai retornar uma lista vazia

@@ -12,13 +12,13 @@ public class Process {
 
 	private int rangeFinal;
 
-	private Particion particao;
+	private Partition particao;
 
-	public Particion getParticao() {
+	public Partition getParticao() {
 		return particao;
 	}
 
-	public void setParticao(Particion particao) {
+	public void setParticao(Partition particao) {
 		this.particao = particao;
 	}
 
@@ -65,7 +65,7 @@ public class Process {
 			if ("ES".equals(instrucao.getES())) {
 				instrucao.setES("");
 				// Process novoProcesso = this.clone();
-				ParticionManagement.addProcessoES(this);
+				PartitionManagement.addProcessoES(this);
 			} else {
 				if (instrucao.typeOperation != null && instrucao.typeOperation.equals("sw")) {
 					particao.write(this, instrucao.getStoragePosition(), instrucao.getValue());

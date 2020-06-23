@@ -21,7 +21,7 @@ public class Unit {
 
 			Scanner scan = new Scanner(System.in);
 			String valueCommand = scan.nextLine();
-			ArrayList<Process> processList = new ArrayList<Process>();
+			//ArrayList<Process> processList = new ArrayList<Process>();
 
 			int command = Integer.parseInt(valueCommand);
 
@@ -31,32 +31,32 @@ public class Unit {
 				switch (command) {
 
 				case (1):
-					MemoryManagement.iniciarMemória();
+					MemoryManagement.startMemory();
 					System.out.println("A alocação de memória será por First-Fit"); // executa o gerenciamento de memória por First-fit
-					ParticionManagement.setTipoAlocacao(ParticionManagement.firstFit);
+					PartitionManagement.setTipoAlocacao(PartitionManagement.firstFit);
 					
-					ParticionManagement.setProcessos(data.ImportDATA());
+					PartitionManagement.setProcessos(data.ImportDATA());
 					break;
 				case (2):
-					MemoryManagement.iniciarMemória();
+					MemoryManagement.startMemory();
 					System.out.println("A alocação de memória será por Best-Fit"); // executa o gerenciamento de memória por Best-Fit
-					ParticionManagement.setTipoAlocacao(ParticionManagement.bestFit);
+					PartitionManagement.setTipoAlocacao(PartitionManagement.bestFit);
 
-					ParticionManagement.setProcessos(data.ImportDATA());
+					PartitionManagement.setProcessos(data.ImportDATA());
 					break;
 				case (3):
-					MemoryManagement.iniciarMemória();
+					MemoryManagement.startMemory();
 					System.out.println("A alocação de memória será por Worst-Fit"); // executa o gerenciamento de memória por worst-fit
-					ParticionManagement.setTipoAlocacao(ParticionManagement.worstFit);
+					PartitionManagement.setTipoAlocacao(PartitionManagement.worstFit);
 
-					ParticionManagement.setProcessos(data.ImportDATA());
+					PartitionManagement.setProcessos(data.ImportDATA());
 					break;
 				case (4):
-					MemoryManagement.iniciarMemória();
+					MemoryManagement.startMemory();
 					System.out.println("A alocação de memória será por Circular-fit"); // executa o gerenciamento de memória por circular-fit
-					ParticionManagement.setTipoAlocacao(ParticionManagement.circularFit);
+					PartitionManagement.setTipoAlocacao(PartitionManagement.circularFit);
 					
-					ParticionManagement.setProcessos(data.ImportDATA());
+					PartitionManagement.setProcessos(data.ImportDATA());
 					break;
 				}
 
@@ -64,12 +64,12 @@ public class Unit {
 				// caso for um valor fora do intervalo dispara uma exception
 				throw new Exception();
 			}
-			ParticionManagement.alocaProcessos();
+			PartitionManagement.alocaProcessos();
 			MemoryManagement.escreveMemoria();
 			Others.writer.close();
 		} catch (Exception ex) { // exception que executa inicia a main novamente informando que o valor inserido
-									// era inválido
-			ex.printStackTrace();
+									// era inválido, chamando a main novamente e reiniciando a execução do software
+			//ex.printStackTrace();
 			System.out.println("Comando inválido, insira um comando válido!");
 			main(args);
 		}

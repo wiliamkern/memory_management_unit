@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-public class Particion {
+public class Partition {
 	
 	private int size;
 	private ArrayList<String> memory = new ArrayList<String>();
 	private int ultimaMemoria = 0;
 	
 	
-	public Particion(int size){
+	public Partition(int size){
 		this.size = size;
 		for (int i = 0; i < size; i++) {
 			memory.add(" ");
@@ -30,14 +30,14 @@ public class Particion {
 	}
 	
 	
-	public boolean verificaAcessoIlegal(Process processo, int postion, int tamanho) {
+	public boolean verificaAcessoIlegal(Process processo, int position, int tamanho) {
 		if (processo.getRangeFinal() == -1) {
 			return false;
 		}
 //		postion = postion-1;
-		if ((postion + tamanho) <= (processo.getRangeFinal() - processo.getRangeInicial())) {
+		if ((position + tamanho) <= (processo.getRangeFinal() - processo.getRangeInicial())) {
 			for (int i = 0; i < tamanho; i++) {
-				if (!memory.get(postion + i).equals(" ")) {
+				if (!memory.get(position + i).equals(" ")) {
 					// Acesso ilegal de memória
 					return false;
 				}
@@ -47,16 +47,17 @@ public class Particion {
 		return false;
 	}
 
-	public void write(Process processo, int postion, String value) {
-		if (verificaAcessoIlegal(processo, postion, value.length())) {
+	public void write(Process processo, int position, String value) {
+		if (verificaAcessoIlegal(processo, position, value.length())) {
 			for (int i = 0; i < value.length(); i++) {
-				memory.set(postion + i, value.substring(i, i + 1));
+				memory.set(position + i, value.substring(i, i + 1));
 			}
 		} else {
 			System.out.println("Acesso Ilegal de memória");
 		}
 	}
-//test
+
+	
 	public String read(Process processo, int postion) {
 		String retorno = "";
 		
@@ -68,8 +69,6 @@ public class Particion {
 		System.out.println(retorno);
 		return retorno;
 	}
-	
-	
 	
 	
 	public void escreveMemoria() {
