@@ -12,7 +12,8 @@ public class Others {
 	public ArrayList<Process> ImportDATA() {
 		try {
 			
-			System.out.print("Insira o local que está o arquivo dos processos.....");
+			System.out.println("Insira o local que está o arquivo dos processos.....");
+			System.out.print("->");
 			
 			String importLocation = "";
 			Scanner directory = new Scanner(System.in);
@@ -98,8 +99,8 @@ public class Others {
 			System.out.println("Criando o arquivo memoria.txt");
 
 			writer = new PrintWriter("memoria.txt", "UTF-8"); // cria o arquivo memoria.txt
-			writer.println("The first line");
-			writer.println("The second line");
+//			writer.println("The first line");
+//			writer.println("The second line");
 //			writer.close();
 
 			System.out.println("Arquivo memoria.txt criado com Sucesso!!");

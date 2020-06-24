@@ -3,12 +3,23 @@ import java.util.ArrayList;
 public class Partition {
 	
 	private int size;
+	private int partitionNumber;
+	public int getPartitionNumber() {
+		return partitionNumber;
+	}
+
+	public void setPartitionNumber(int partitionNumber) {
+		this.partitionNumber = partitionNumber;
+	}
+
+
 	private ArrayList<String> memory = new ArrayList<String>();
 	private int ultimaMemoria = 0;
 	
 	
-	public Partition(int size){
+	public Partition(int size, int partitionNumber){
 		this.size = size;
+		this.partitionNumber = partitionNumber;
 		for (int i = 0; i < size; i++) {
 			memory.add(" ");
 		}

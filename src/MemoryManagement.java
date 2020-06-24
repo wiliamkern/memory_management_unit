@@ -8,6 +8,7 @@ public class MemoryManagement {
 	public static ArrayList<Partition> getParticoes() {
 		return partitions;
 	}
+	
 
 	static void startMemory() { // criação as partições
 		
@@ -16,25 +17,25 @@ public class MemoryManagement {
 			memory.add("X");
 		}
 		
-		Partition particion1 = new Partition(50000); //partições com tamanhos diferentes para os algoritmos de alocação trabalharem
+		Partition particion1 = new Partition(50000, 0); //partições com tamanhos diferentes para os algoritmos de alocação trabalharem
 		partitions.add(particion1);					// as partições criadas fecha os outros 500000 bits que poderão ser usados pelo software
-		Partition particion2 = new Partition(50000);
+		Partition particion2 = new Partition(50000, 1);
 		partitions.add(particion2);
-		Partition particion3 = new Partition(40000);
+		Partition particion3 = new Partition(40000, 2);
 		partitions.add(particion3);
-		Partition particion4 = new Partition(60000);
+		Partition particion4 = new Partition(60000, 3);
 		partitions.add(particion4);
-		Partition particion5 = new Partition(10000);
+		Partition particion5 = new Partition(10000, 4);
 		partitions.add(particion5);
-		Partition particion6 = new Partition(90000);
+		Partition particion6 = new Partition(90000, 5);
 		partitions.add(particion6);
-		Partition particion7 = new Partition(80000);
+		Partition particion7 = new Partition(80000, 6);
 		partitions.add(particion7);
-		Partition particion8 = new Partition(20000);
+		Partition particion8 = new Partition(20000, 7);
 		partitions.add(particion8);
-		Partition particion9 = new Partition(30000);
+		Partition particion9 = new Partition(30000, 8);
 		partitions.add(particion9);
-		Partition particion10 = new Partition(70000);
+		Partition particion10 = new Partition(70000, 9);
 		partitions.add(particion10);
 //		for (int i = 500000; i > 1; i--) {
 //			memory.add("");
