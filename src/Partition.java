@@ -92,6 +92,7 @@ public class Partition {
 		}
 	}
 	
+	//Verifica espacos
 	public void printaLacuna() {
 		int lacuna = size - ultimaMemoria;
 		System.out.println("Particion Id " +partitionNumber+"  Lacuna tamanho: " + lacuna);

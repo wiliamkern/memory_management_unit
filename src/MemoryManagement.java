@@ -50,6 +50,7 @@ public class MemoryManagement {
 		for(Partition particao: partitions) {
 			particao.escreveMemoria();
 		}
+		//Printa Lacunas
 		for(Partition particao: partitions) {
 			particao.printaLacuna();
 		}
