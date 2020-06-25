@@ -1,5 +1,3 @@
-The first line
-The second line
 X
 X
 X
@@ -499999,7 +499997,11 @@ X
 X
 X
 X
-Particion Tamanho: 50000
+Particion Id 0  Tamanho: 50000
+1
+0
+0
+0
  
  
  
@@ -500495,6 +500497,10 @@ Particion Tamanho: 50000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -549988,6 +549994,15 @@ Particion Tamanho: 50000
  
  
  
+0
+0
+0
+1
+Particion Id 1  Tamanho: 50000
+1
+0
+0
+0
  
  
  
@@ -550000,7 +550015,6 @@ Particion Tamanho: 50000
  
  
  
-Particion Tamanho: 50000
  
  
  
@@ -550484,6 +550498,10 @@ Particion Tamanho: 50000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -599977,6 +599995,15 @@ Particion Tamanho: 50000
  
  
  
+0
+0
+0
+1
+Particion Id 2  Tamanho: 40000
+1
+0
+0
+0
  
  
  
@@ -600001,7 +600028,6 @@ Particion Tamanho: 50000
  
  
  
-Particion Tamanho: 40000
  
  
  
@@ -639970,6 +639996,15 @@ Particion Tamanho: 40000
  
  
  
+0
+0
+0
+1
+Particion Id 3  Tamanho: 60000
+1
+0
+0
+0
  
  
  
@@ -640002,7 +640037,6 @@ Particion Tamanho: 40000
  
  
  
-Particion Tamanho: 60000
  
  
  
@@ -640466,6 +640500,10 @@ Particion Tamanho: 60000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -699959,6 +699997,15 @@ Particion Tamanho: 60000
  
  
  
+0
+0
+0
+1
+Particion Id 4  Tamanho: 10000
+1
+0
+0
+0
  
  
  
@@ -700003,7 +700050,6 @@ Particion Tamanho: 60000
  
  
  
-Particion Tamanho: 10000
  
  
  
@@ -709952,6 +709998,15 @@ Particion Tamanho: 10000
  
  
  
+0
+0
+0
+1
+Particion Id 5  Tamanho: 90000
+1
+0
+0
+0
  
  
  
@@ -710004,7 +710059,6 @@ Particion Tamanho: 10000
  
  
  
-Particion Tamanho: 90000
  
  
  
@@ -710448,6 +710502,10 @@ Particion Tamanho: 90000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -799941,6 +799999,15 @@ Particion Tamanho: 90000
  
  
  
+0
+0
+0
+1
+Particion Id 6  Tamanho: 80000
+1
+1
+1
+1
  
  
  
@@ -800005,7 +800072,6 @@ Particion Tamanho: 90000
  
  
  
-Particion Tamanho: 80000
  
  
  
@@ -800437,6 +800503,10 @@ Particion Tamanho: 80000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -879934,6 +880004,11 @@ Particion Tamanho: 80000
  
  
  
+Particion Id 7  Tamanho: 20000
+1
+0
+0
+0
  
  
  
@@ -880006,7 +880081,6 @@ Particion Tamanho: 80000
  
  
  
-Particion Tamanho: 20000
  
  
  
@@ -880430,6 +880504,10 @@ Particion Tamanho: 20000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -899923,6 +900001,15 @@ Particion Tamanho: 20000
  
  
  
+0
+0
+0
+1
+Particion Id 8  Tamanho: 30000
+1
+0
+0
+0
  
  
  
@@ -900007,7 +900094,6 @@ Particion Tamanho: 20000
  
  
  
-Particion Tamanho: 30000
  
  
  
@@ -900419,6 +900505,10 @@ Particion Tamanho: 30000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -929912,6 +930002,15 @@ Particion Tamanho: 30000
  
  
  
+0
+0
+0
+1
+Particion Id 9  Tamanho: 70000
+1
+0
+0
+0
  
  
  
@@ -930008,7 +930107,6 @@ Particion Tamanho: 30000
  
  
  
-Particion Tamanho: 70000
  
  
  
@@ -930408,6 +930506,10 @@ Particion Tamanho: 70000
  
  
  
+1
+1
+1
+1
  
  
  
@@ -999901,111 +1000003,7 @@ Particion Tamanho: 70000
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+0
+0
+0
+1

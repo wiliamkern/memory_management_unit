@@ -64,10 +64,10 @@ public class Partition {
 				int pos = position + i;
 				memory.set(pos, value.substring(i, i + 1));
 				pos = pos+1;
-				System.out.println("Inserido Position: " + pos + " Value: "+value.substring(i, i + 1) +" Pid: "+processo.getPid() + " Particion ID: " + partitionNumber +" Size: "+size);
+				System.out.println("Inserido Position: " + pos + " Value: "+value.substring(i, i + 1) +" Pid: "+processo.getPid() + " Partition ID: " + partitionNumber +" Size: "+size);
 			}
 		} else {
-			System.out.println("Acesso Ilegal de memória position: " + position + " Value: "+value +" Pid: "+processo.getPid() + " Particion ID: " + partitionNumber +" Size: "+size);
+			System.out.println("Acesso Ilegal de memória position: " + position + " Value: "+value +" Pid: "+processo.getPid() + " Partition ID: " + partitionNumber +" Size: "+size);
 		}
 	}
 
