@@ -32,9 +32,9 @@ public class Others {
 			
 			PartitionManagement.setProcessos(new ArrayList<Process>());
 			
-			Process process = new Process();
 
 			while (input.hasNextLine()) { // lê processo por processo (linha a linha)
+				Process process = new Process();
 
 				String rowData = String.valueOf(input.nextLine());
 

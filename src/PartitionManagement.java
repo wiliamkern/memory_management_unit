@@ -38,10 +38,10 @@ public class PartitionManagement {
 				case (firstFit):
 					process.setParticao(getParticionFirstFit(process));
 					break;
-				case (worstFit):
+				case (bestFit):
 					process.setParticao(getParticionBestFit(process));
 					break;
-				case (bestFit):
+				case (worstFit):
 					process.setParticao(getParticionWorstFit(process));
 					break;
 				case (circularFit):
@@ -58,10 +58,10 @@ public class PartitionManagement {
 				case (firstFit):
 					process.setParticao(getParticionFirstFit(process));
 					break;
-				case (worstFit):
+				case (bestFit):
 					process.setParticao(getParticionBestFit(process));
 					break;
-				case (bestFit):
+				case (worstFit):
 					process.setParticao(getParticionWorstFit(process));
 					break;
 				case (circularFit):
@@ -80,6 +80,7 @@ public class PartitionManagement {
 				return particao;
 			}
 		}
+		System.out.println("Não foi possível encontrar uma partição com espaço suficiente para o Processo de PID = " + processo.getPid());
 		return null;
 	}
 
@@ -93,6 +94,9 @@ public class PartitionManagement {
 				espacoEficiente = particao.getEspacoLivre();
 			}
 		}
+		if(particionEficiente == null) {
+			System.out.println("Não foi possível encontrar uma partição com espaço suficiente para o Processo de PID = " + processo.getPid());
+		}
 		return particionEficiente;
 	}
 
@@ -105,6 +109,9 @@ public class PartitionManagement {
 				particionEficiente = particao;
 				espacoEficiente = particao.getEspacoLivre();
 			}
+		}
+		if(particionEficiente == null) {
+			System.out.println("Não foi possível encontrar uma partição com espaço suficiente para o Processo de PID = " + processo.getPid());
 		}
 		return particionEficiente;
 	}
@@ -134,13 +141,16 @@ public class PartitionManagement {
 						return particao.get(x);
 					}
 					if(control == false && particao.size() == x) {
+						System.out.println("Não foi possível encontrar uma partição com espaço suficiente para o Processo de PID = " + processo.getPid());
 						return null;	// quando não teve memória de amanho suficiente livre							
 					}												
 				}
+				System.out.println("Não foi possível encontrar uma partição com espaço suficiente para o Processo de PID = " + processo.getPid());
 				return null;								
 			}												
 			
 		}
+		System.out.println("Não foi possível encontrar uma partição com espaço suficiente para o Processo de PID = " + processo.getPid());
 		return null;
 	}
 

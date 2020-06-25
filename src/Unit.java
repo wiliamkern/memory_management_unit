@@ -71,7 +71,7 @@ public class Unit {
 			Others.writer.close();
 		} catch (Exception ex) { // exception que executa inicia a main novamente informando que o valor inserido
 									// era inválido, chamando a main novamente e reiniciando a execução do software
-			//ex.printStackTrace();
+			ex.printStackTrace();
 			System.out.println("Comando inválido, insira um comando válido!");
 			main(args);
 		}

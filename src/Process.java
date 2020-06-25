@@ -8,7 +8,7 @@ public class Process {
 
 	ArrayList<Instruction> processTasks = new ArrayList<Instruction>(); // instruções a serem executadas pelo processo
 
-	private int rangeInicial;
+	private int rangeInicial = -1;
 
 	private int rangeFinal;
 
@@ -60,22 +60,35 @@ public class Process {
 	}
 
 	boolean executar() {
-		getRanges();
-		for (Instruction instrucao : processTasks) {
-			if ("ES".equals(instrucao.getES())) {
-				instrucao.setES("");
-				// Process novoProcesso = this.clone();
-				PartitionManagement.addProcessoES(this);
-			} else {
-				if (instrucao.typeOperation != null && instrucao.typeOperation.equals("sw")) {
-					particao.write(this, instrucao.getStoragePosition(), instrucao.getValue());
-				} else {
-					particao.read(this, instrucao.getStoragePosition());
-				}
-				instrucao.processado = true;
+		if (particao != null) {
+			if (rangeInicial < 0) {
+				getRanges();
 			}
+			for (Instruction instrucao : processTasks) {
+				// verifica se ja foi processado, por causa da ES
+				if (!instrucao.processado) {
+					if ("ES".equals(instrucao.getES())) {
+						instrucao.setES("");
+						// Process novoProcesso = this.clone();
+						instrucao.processado = true;
+						PartitionManagement.addProcessoES(this);
+						break;
+					} else {
+						if (instrucao.typeOperation != null && instrucao.typeOperation.equals("sw")) {
+							particao.write(this, rangeInicial + instrucao.getStoragePosition(), instrucao.getValue());
+						} else {
+							particao.read(this, rangeInicial + instrucao.getStoragePosition());
+						}
+						instrucao.processado = true;
+					}
+				}
+			}
+			return true;
 		}
-		return true;
+		else {
+			//Processo sem partição
+			return false;
+		}
 	}
 
 }

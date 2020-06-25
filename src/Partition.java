@@ -46,7 +46,7 @@ public class Partition {
 			return false;
 		}
 //		postion = postion-1;
-		if ((position + tamanho) <= (processo.getRangeFinal() - processo.getRangeInicial())) {
+		if ((position + tamanho) <= (processo.getRangeFinal())) {
 			for (int i = 0; i < tamanho; i++) {
 				if (!memory.get(position + i).equals(" ")) {
 					// Acesso ilegal de memória
@@ -61,10 +61,13 @@ public class Partition {
 	public void write(Process processo, int position, String value) {
 		if (verificaAcessoIlegal(processo, position, value.length())) {
 			for (int i = 0; i < value.length(); i++) {
-				memory.set(position + i, value.substring(i, i + 1));
+				int pos = position + i;
+				memory.set(pos, value.substring(i, i + 1));
+				pos = pos+1;
+				System.out.println("Inserido Position: " + pos + " Value: "+value.substring(i, i + 1) +" Pid: "+processo.getPid() + " Particion ID: " + partitionNumber +" Size: "+size);
 			}
 		} else {
-			System.out.println("Acesso Ilegal de memória");
+			System.out.println("Acesso Ilegal de memória position: " + position + " Value: "+value +" Pid: "+processo.getPid() + " Particion ID: " + partitionNumber +" Size: "+size);
 		}
 	}
 
@@ -72,18 +75,18 @@ public class Partition {
 	public String read(Process processo, int postion) {
 		String retorno = "";
 		
-		if ((postion + 4) <= (processo.getRangeFinal() - processo.getRangeInicial())) {
+		if ((postion + 4) <= (processo.getRangeFinal())) {
 			for (int i = 0; i < 4; i++) {
 				retorno = retorno + memory.get(postion + i);
 			}
 		}
-		System.out.println(retorno);
+		System.out.println("Leitura: "+ retorno);
 		return retorno;
 	}
 	
 	
 	public void escreveMemoria() {
-		Others.writer.println("Particion Tamanho: " + size);
+		Others.writer.println("Particion Id " +partitionNumber+"  Tamanho: " + size);
 		for(String texto: memory) {
 			Others.writer.println(texto);
 		}
